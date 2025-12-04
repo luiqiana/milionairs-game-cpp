@@ -15,13 +15,20 @@ private:
 	std::unique_ptr<mysqlx::Session> session;
 	//std::string getEnvVar(const char *key);
 	std::string dbName;
+	Database();
 
 public:
-	Database();
 	~Database();
 
-	// Method to return active DB session
+	Database(const Database&) = delete;
+	Database &operator=(const Database&) = delete;
+
+	// Methods to return active DB session
 	mysqlx::Session &getSession();
+	static Database &getInstance() {
+		static Database instance;
+		return instance;
+	}
 };
 
 

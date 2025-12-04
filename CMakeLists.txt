@@ -32,6 +32,10 @@ add_executable(mil main.cpp
         utils/formating.h
         interface/mainMenu.cpp
         interface/mainMenu.h
-        interface/credentials.h)
+        interface/credentials.h
+        interface/showTop.cpp
+        interface/showTop.h
+        database/dbQuerys.cpp
+        database/dbQuerys.h)
 
 target_link_libraries(mil ${FOUND_LIBRARIES})

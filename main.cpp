@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 	try {
-		Database db;
+		Database::getInstance();
 		cout << "Starting game..." << endl;
 		startGameHeader();
 		mainMenu::showMenu(false);
