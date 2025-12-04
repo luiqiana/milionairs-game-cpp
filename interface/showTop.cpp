@@ -10,6 +10,8 @@
 #include "./mainMenu.h"
 #include <mysqlx/xdevapi.h>
 #include "./../database/dbQuerys.h"
+#include <sstream>
+#include <iomanip>
 
 void showTop::showYourChoice(int wrong) {
 	// \033[*A = Cursor * lines up
@@ -89,19 +91,28 @@ void showTop::showTopPlayers() {
 )" << std::endl << std::endl;
 	std::string choice = makeChoice();
 	if(choice.empty()) return;
-	const int defaultHowMuch = 10;
-	std::string howMuchString;
-	int howMuch;
-	std::cout << "Ile graczy chcesz wyświetlić ("<< defaultHowMuch << "): ";
-	if(!(std::cin >> howMuchString)) {
+	const int defaulthowMany = 10;
+	int howMany;
+	bool incorrect = false;
+	std::cout << "Ile graczy chcesz wyświetlić ("<< defaulthowMany << "): ";
+
+	std::string inpLine;
+	std::getline(std::cin, inpLine);
+	std::stringstream ss(inpLine);
+	if(inpLine.empty() || !(ss >> howMany)) {
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cout << "Nieprawidłowe wejście, wyświetlam wartość domyślną" << std::endl;
-		howMuch = defaultHowMuch;
+		incorrect = true;
+		howMany = defaulthowMany;
 	}
-	else howMuch = std::stoi(howMuchString);
 
-	mysqlx::string query = std::format("SELECT `username`, `{}` FROM `players` ORDER BY `{}` DESC LIMIT {};", choice, choice, howMuch);
+	displayStats(howMany, choice, incorrect);
+}
+
+void showTop::displayStats(const int howMany, const std::string choice, const bool incorrect) {
+	showTitle();
+	if(incorrect) std::cout << "Nieprawidłowe wejście, wyświetlam wartość domyślną" << std::endl;
+	mysqlx::string query = std::format("SELECT `username`, `{}` FROM `players` ORDER BY `{}` DESC LIMIT {};", choice, choice, howMany);
 	auto result = dbQuerys::selRows(query);
 
 	if(!result.has_value()) {
@@ -114,10 +125,18 @@ void showTop::showTopPlayers() {
 	mysqlx::RowResult &rowResult = *result;
 
 	int counter = 0;
-	std::cout << "TOP\tUżytkownik\t" << (choice == "wins" ? "Wygrane" : (choice == "played_games" ? "Zagrane" : "Pieniądze")) << std::endl;
+	std::cout << std::left
+	<< std::setw(6) << "TOP"
+	<< std::setw(25) << "Użytkownik"
+	<< (choice == "wins" ? "Wygrane" : (choice == "played_games" ? "Zagrane gry" : "Zebrane pieniądze"))
+	<< std::endl;
+	std::cout << "------------------------------------------------" << std::endl;
 	for(auto it : rowResult) {
 		counter++;
-		std::cout << counter << ".\t" << it[0] << "\t" << it[1] << std::endl;
+		std::cout << std::left
+		<< std::setw(6) << (std::to_string(counter) + ".")
+		<< std::setw(25) << it[0]
+		<< it[1] << std::endl;
 	}
 
 	query = "SELECT COUNT(*) FROM `players`";
@@ -125,7 +144,12 @@ void showTop::showTopPlayers() {
 	if(result1.has_value()) {
 		mysqlx::Row row = result1 -> fetchOne();
 		int rowCounter = row[0].get<int>();
-		std::cout << "\tWyświetlono: " << counter << "/" << rowCounter << std::endl;
+		std::cout << "Wyświetlono: " << counter << "/" << rowCounter << std::endl;
 	}
+	std::cout << std::endl;
 
+	std::cout << "Aby powrócic kliknij ENTER" << std::endl;
+	std::cin.get();
+
+	showTopPlayers();
 }
