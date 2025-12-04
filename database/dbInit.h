@@ -14,6 +14,7 @@ public:
 
 private:
 	static void executeScriptFromFile(mysqlx::Session &session, const std::string &fileName);
+	static bool recordsEmpty(mysqlx::Session &session, const mysqlx::string& query);
 };
 
 

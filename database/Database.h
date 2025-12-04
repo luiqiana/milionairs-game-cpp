@@ -13,7 +13,7 @@ class Database {
 private:
 	// Smart pointer on session (to loadout automatically)
 	std::unique_ptr<mysqlx::Session> session;
-	std::string getEnvVar(const char *key);
+	//std::string getEnvVar(const char *key);
 	std::string dbName;
 
 public:

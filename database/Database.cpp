@@ -8,11 +8,6 @@
 #include "envLoader.h"
 #include "dbInit.h"
 
-std::string Database::getEnvVar(const char *key) {
-	const char *val = std::getenv(key);
-	return val ? val : "";
-}
-
 Database::Database() {
 	loadEnv();
 

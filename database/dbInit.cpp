@@ -5,7 +5,6 @@
 #include "dbInit.h"
 #include <iostream>
 #include <fstream>
-#include <sstream>
 
 void dbInit::init(mysqlx::Session &session, const std::string &dbName) {
 	try {
@@ -20,6 +19,7 @@ void dbInit::init(mysqlx::Session &session, const std::string &dbName) {
 	}
 
 	executeScriptFromFile(session, "./database/dbSchem.sql");
+	if(recordsEmpty(session, "SELECT COUNT(*) FROM `questions`")) executeScriptFromFile(session, "./database/dbQuest.sql");
 }
 
 void dbInit::executeScriptFromFile(mysqlx::Session &session, const std::string &fileName) {
@@ -52,5 +52,21 @@ void dbInit::executeScriptFromFile(mysqlx::Session &session, const std::string &
 		}
 	}
 
-	std::cout << "[DB Initializer] Database initialized!" << std::endl;
+	std::cout << "[DB Initializer] Database initialized with " << fileName << "!" << std::endl;
+}
+
+bool dbInit::recordsEmpty(mysqlx::Session &session, const mysqlx::string& query) {
+	if(query.empty()) {
+		std::cerr << "[DB Initializer] Query empty, returning false value" << std::endl;
+		return false;
+	}
+	try {
+		mysqlx::RowResult result = session.sql(query).execute();
+		mysqlx::Row row = result.fetchOne();
+		return row[0].get<int>() == 0;
+	}
+	catch(const mysqlx::Error &err) {
+		std::cerr << "[DB Initializer] Error during is table empty: " << err << std::endl;
+		return false;
+	}
 }

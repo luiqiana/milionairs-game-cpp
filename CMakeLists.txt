@@ -18,11 +18,20 @@ else()
     message(FATAL_ERROR "Directory ${MYSQL_ROOT}/lib doesn't have any files with .dylib extension")
 endif()
 
+file(COPY database/.env DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/database)
+file(COPY database/dbSchem.sql DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/database)
+file(COPY database/dbQuest.sql DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/database)
+
 add_executable(mil main.cpp
         database/envLoader.h
         database/Database.cpp
         database/Database.h
         database/dbInit.cpp
-        database/dbInit.h)
+        database/dbInit.h
+        utils/utils.h
+        utils/formating.h
+        interface/mainMenu.cpp
+        interface/mainMenu.h
+        interface/credentials.h)
 
 target_link_libraries(mil ${FOUND_LIBRARIES})

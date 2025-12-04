@@ -1,12 +1,17 @@
 #include <iostream>
 #include "database/Database.h"
+#include "utils/utils.h"
+#include "interface/mainMenu.h"
 
 using namespace std;
 
 int main() {
 	try {
 		Database db;
-		cout << "The game has begun!" << endl;
+		cout << "Starting game..." << endl;
+		startGameHeader();
+		mainMenu::showMenu(false);
+
 	}
 	catch(const std::exception &e) {
 		cerr << "Critical error: " << e.what() << endl;

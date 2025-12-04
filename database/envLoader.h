@@ -10,6 +10,11 @@
 #include <string>
 #include <cstdlib>
 
+inline std::string getEnvVar(const char *key) {
+	const char *val = std::getenv(key);
+	return val ? val : "";
+}
+
 inline std::string trim(const std::string &str) {
 	// first char index of char that isn't space, tab or new line
 	size_t first = str.find_first_not_of(" \t\n\r");
