@@ -95,5 +95,13 @@ inline void gameEnd(const int code, const std::string error = "") {
 	std::exit(code);
 }
 
+inline bool isAlphanumeric(const std::string str) {
+	if(str.empty()) return false;
+	for(char c : str) {
+		if(!std::isalnum(c)) return false;
+	}
+	return true;
+}
+
 
 #endif

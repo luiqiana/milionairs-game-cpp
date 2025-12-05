@@ -5,6 +5,7 @@
 #include "dbInit.h"
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 void dbInit::init(mysqlx::Session &session, const std::string &dbName) {
 	try {
@@ -63,7 +64,7 @@ bool dbInit::recordsEmpty(mysqlx::Session &session, const mysqlx::string& query)
 	try {
 		mysqlx::RowResult result = session.sql(query).execute();
 		mysqlx::Row row = result.fetchOne();
-		return row[0].get<int>() == 0;
+		return row[0].get<int64_t>() == 0;
 	}
 	catch(const mysqlx::Error &err) {
 		std::cerr << "[DB Initializer] Error during is table empty: " << err << std::endl;

@@ -28,7 +28,13 @@ void showStats::showPlayerStats() {
 
 void showStats::showPlayer(const std::string player) {
 	showTitle();
-	mysqlx::string query  = std::format("SELECT `username`, `wins`, `played_games`, `money`, `5050`, `phone`, `publicity` FROM `players` WHERE `username` = '{}'", player);
+	if(!isAlphanumeric(player)) {
+		std::cout << "Nie znaleziono gracza o nicku: " << player << ". Powrót za 5 sekund..." << std::endl;
+		std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+		showPlayerStats();
+		return;
+	}
+	mysqlx::string query  = std::format("SELECT `username`, `wins`, `played_games`, `money`, `5050`, `phone`, `publicity` FROM `players` WHERE `username` = '{}';", player);
 	auto result = dbQuerys::selRows(query);
 
 	if(!result.has_value()) {

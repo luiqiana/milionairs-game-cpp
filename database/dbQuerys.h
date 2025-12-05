@@ -7,10 +7,12 @@
 
 #include <mysqlx/xdevapi.h>
 #include <optional>
+#include <cstdint>
 
 class dbQuerys {
 public:
-	static std::optional<mysqlx::RowResult> selRows(mysqlx::string query);
+	static std::optional<mysqlx::RowResult> selRows(mysqlx::string queryString);
+	static int64_t insertLine(mysqlx::string queryString);
 };
 
 

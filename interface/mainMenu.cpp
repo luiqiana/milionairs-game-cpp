@@ -9,6 +9,7 @@
 #include "./credentials.h"
 #include "./showTop.h"
 #include "./showStats.h"
+#include "./game/startGame.h"
 
 void mainMenu::showYourChoice(const int wrong) {
 	// \033[*A = Cursor * lines up
@@ -48,6 +49,7 @@ void mainMenu::makeChoice() {
 
 	switch(choice) {
 		case 1:
+			startGame::start();
 			break;
 		case 2:
 			showStats::showPlayerStats();

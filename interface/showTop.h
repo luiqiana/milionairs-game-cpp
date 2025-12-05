@@ -6,6 +6,7 @@
 #define MIL_SHOWTOP_H
 
 #include <iostream>
+#include <cstdint>
 
 class showTop {
 public:
@@ -13,7 +14,7 @@ public:
 private:
 	static void showYourChoice(int wrong);
 	static std::string makeChoice();
-	static void displayStats(int howMany, std::string choice, bool incorrect);
+	static void displayStats(int64_t howMany, std::string choice, bool incorrect);
 };
 
 

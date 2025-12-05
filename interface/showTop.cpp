@@ -12,6 +12,7 @@
 #include "./../database/dbQuerys.h"
 #include <sstream>
 #include <iomanip>
+#include <cstdint>
 
 void showTop::showYourChoice(int wrong) {
 	// \033[*A = Cursor * lines up
@@ -92,16 +93,33 @@ void showTop::showTopPlayers() {
 	std::string choice = makeChoice();
 	if(choice.empty()) return;
 	const int defaulthowMany = 10;
-	int howMany;
+	int64_t howMany;
 	bool incorrect = false;
 	std::cout << "Ile graczy chcesz wyświetlić ("<< defaulthowMany << "): ";
 
 	std::string inpLine;
+	std::cin.ignore();
 	std::getline(std::cin, inpLine);
-	std::stringstream ss(inpLine);
+	/*std::stringstream ss(inpLine);
 	if(inpLine.empty() || !(ss >> howMany)) {
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		incorrect = true;
+		howMany = defaulthowMany;
+	}*/
+	if(inpLine.empty()) {
+		howMany = defaulthowMany;
+		incorrect = false;
+	}
+	else {
+		std::stringstream ss(inpLine);
+		if(!(ss >> howMany)) {
+			howMany = defaulthowMany;
+			incorrect = true;
+		}
+	}
+
+	if(howMany < 1) {
 		incorrect = true;
 		howMany = defaulthowMany;
 	}
@@ -109,7 +127,7 @@ void showTop::showTopPlayers() {
 	displayStats(howMany, choice, incorrect);
 }
 
-void showTop::displayStats(const int howMany, const std::string choice, const bool incorrect) {
+void showTop::displayStats(const int64_t howMany, const std::string choice, const bool incorrect) {
 	showTitle();
 	if(incorrect) std::cout << "Nieprawidłowe wejście, wyświetlam wartość domyślną" << std::endl;
 	mysqlx::string query = std::format("SELECT `username`, `{}` FROM `players` ORDER BY `{}` DESC LIMIT {};", choice, choice, howMany);
@@ -143,7 +161,7 @@ void showTop::displayStats(const int howMany, const std::string choice, const bo
 	auto result1 = dbQuerys::selRows(query);
 	if(result1.has_value()) {
 		mysqlx::Row row = result1 -> fetchOne();
-		int rowCounter = row[0].get<int>();
+		int64_t rowCounter = row[0].get<int64_t>();
 		std::cout << "Wyświetlono: " << counter << "/" << rowCounter << std::endl;
 	}
 	std::cout << std::endl;
