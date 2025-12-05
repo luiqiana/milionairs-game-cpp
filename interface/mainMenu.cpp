@@ -8,6 +8,7 @@
 #include "./../utils/formating.h"
 #include "./credentials.h"
 #include "./showTop.h"
+#include "./showStats.h"
 
 void mainMenu::showYourChoice(const int wrong) {
 	// \033[*A = Cursor * lines up
@@ -49,6 +50,7 @@ void mainMenu::makeChoice() {
 		case 1:
 			break;
 		case 2:
+			showStats::showPlayerStats();
 			break;
 		case 3:
 			showTop::showTopPlayers();

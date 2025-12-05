@@ -36,6 +36,8 @@ add_executable(mil main.cpp
         interface/showTop.cpp
         interface/showTop.h
         database/dbQuerys.cpp
-        database/dbQuerys.h)
+        database/dbQuerys.h
+        interface/showStats.cpp
+        interface/showStats.h)
 
 target_link_libraries(mil ${FOUND_LIBRARIES})
