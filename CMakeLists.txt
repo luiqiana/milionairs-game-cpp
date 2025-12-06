@@ -40,6 +40,10 @@ add_executable(mil main.cpp
         interface/showStats.cpp
         interface/showStats.h
         interface/game/startGame.cpp
-        interface/game/startGame.h)
+        interface/game/startGame.h
+        interface/game/gameUI.cpp
+        interface/game/gameUI.h
+        interface/game/game.cpp
+        interface/game/game.h)
 
 target_link_libraries(mil ${FOUND_LIBRARIES})

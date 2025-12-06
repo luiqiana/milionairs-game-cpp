@@ -8,10 +8,12 @@
 #include <mysqlx/xdevapi.h>
 #include "../../database/dbQuerys.h"
 #include "./../mainMenu.h"
+#include "./game.h"
+#include <cstdlib>
 
 void startGame::start() {
 	showTitle();
-	long playerId = getPlayerId(getPlayerName());
+	int64_t playerId = getPlayerId(getPlayerName());
 
 	if(playerId == -1) {
 		std::cerr << "Napotkano błąd: Nie można pobrać danych! Powrót do ekranu głównego za 5 sekund..." << std::endl;
@@ -20,7 +22,11 @@ void startGame::start() {
 		return;
 	}
 
-	std::cout << playerId << std::endl;
+	game::gameInit(playerId);
+	return;
+
+	//std::cout << playerId << std::endl;
+
 }
 
 std::string startGame::getPlayerName() {
