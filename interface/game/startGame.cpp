@@ -26,7 +26,6 @@ void startGame::start() {
 	return;
 
 	//std::cout << playerId << std::endl;
-
 }
 
 std::string startGame::getPlayerName() {
@@ -45,15 +44,19 @@ std::string startGame::getPlayerName() {
 }
 
 int64_t startGame::getPlayerId(const std::string playerName) {
-	mysqlx::string query = std::format("SELECT `id` FROM `players` WHERE `username` = '{};'", playerName);
+	mysqlx::string query = std::format("SELECT `id` FROM `players` WHERE `username` = '{}';", playerName);
 	auto result = dbQuerys::selRows(query);
 
 	if(!result.has_value()) return -1;
 
-	int rowCount = result -> count();
+	int64_t rowCount = result -> count();
+	std::cout << rowCount << std::endl;
 	if(rowCount == 1) {
 		mysqlx::Row row = result -> fetchOne();
-		return row[0].get<int64_t>();
+		int64_t playerId = row[0].get<int64_t>();
+		mysqlx::string queryUpd = std::format("UPDATE `players` SET `played_games` = `played_games` + 1 WHERE `id` = {}", playerId);
+		if(!dbQuerys::updateLine(queryUpd)) return -1;
+		return playerId;
 	}
 	return (rowCount == 0 ? createPlayer(playerName) : -1);
 }

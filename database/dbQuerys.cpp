@@ -34,3 +34,16 @@ int64_t dbQuerys::insertLine(mysqlx::string queryString) {
 		return -1;
 	}
 }
+
+bool dbQuerys::updateLine(mysqlx::string queryString) {
+	mysqlx::Session &session = Database::getInstance().getSession();
+	try {
+		mysqlx::SqlResult result = session.sql(queryString).execute();
+		if(result.getAffectedItemsCount() == 0) return false;
+		return true;
+	}
+	catch(const mysqlx::Error &err) {
+		std::cerr << "[DB Query] Error while updating lines: " <<  err.what() << std::endl;
+		return false;
+	}
+}

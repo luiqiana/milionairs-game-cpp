@@ -10,6 +10,7 @@
 #include <chrono>
 #include "./formating.h"
 #include <cstdlib>
+#include <random>
 
 inline std::string getHugeNumber(int num) {
 	switch(num) {
@@ -103,5 +104,18 @@ inline bool isAlphanumeric(const std::string str) {
 	return true;
 }
 
+template<typename T>
+inline T getRandomC(const T min, const T max) {
+	static_assert(std::is_integral<T>::value, "Type must be int, long or int64_t");
+	static std::random_device rd;
+	static std::mt19937_64 gen(rd());
+	std::uniform_int_distribution<T> distrib(min, max);
+	return distrib(gen);
+}
+
+inline char toUpperCase(const char c) {
+	const int difference = 'a' - 'A';
+	return c - difference;
+}
 
 #endif

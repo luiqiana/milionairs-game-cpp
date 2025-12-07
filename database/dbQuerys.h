@@ -13,6 +13,7 @@ class dbQuerys {
 public:
 	static std::optional<mysqlx::RowResult> selRows(mysqlx::string queryString);
 	static int64_t insertLine(mysqlx::string queryString);
+	static bool updateLine(mysqlx::string queryString);
 };
 
 
