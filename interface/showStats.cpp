@@ -53,7 +53,7 @@ void showStats::showPlayer(const std::string player) {
 
 	mysqlx::Row row = result -> fetchOne();
 
-	std::cout << std::left << std::setw(21) << "Username: " << std::setw(0) << row[0] << std::endl;
+	std::cout << std::left << std::setw(22) << "Użytkownik: " << std::setw(0) << row[0] << std::endl;
 	std::cout << std::left << std::setw(21) << "Wygrane gry: " << std::setw(0) << row[1] << std::endl;
 	std::cout << std::left << std::setw(21) << "Zagrane gry: " << std::setw(0) << row[2] << std::endl;
 	std::cout << std::left << std::setw(22) << "Zebrane pieniądze: " << std::setw(0) << row[3] << std::endl;

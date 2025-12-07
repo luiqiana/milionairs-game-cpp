@@ -23,7 +23,7 @@ void gameUI::drawMoneyTree(const int currentLevel) {
 	const std::string prizes[] = {"  1 000 zł", "  2 000 zł", "  5 000 zł", " 10 000 zł", " 15 000 zł", " 25 000 zł", " 50 000 zł", " 75 000 zł", "125 000 zł", "250 000 zł", "500 000 zł", " 1 MILION"};
 	const bool guaranteed[] = {false, true, false, false, false, false, true, false, false, false, false, true};
 
-	const int startX = 70;
+	const int startX = 90;
 	const int startY = 3;
 	gotoXY(startX, startY - 1);
 	std::cout << GOLD << "--- NAGRODY ---" << RESET;
@@ -81,10 +81,9 @@ void gameUI::drawCombined(const int level, std::array<std::string, 5> &question,
 	drawQuestion(question[0], question[1], question[2], question[3], question[4]);
 
 	for(int y = 2; y < 18; y++) {
-		gotoXY(65, y);
+		gotoXY(85, y);
 		std::cout << GOLD << "|" << RESET;
 	}
 
 	gotoXY(4, 19);
-	std::cout << RESET << "Twoja odpowiedź (A/B/C/D), koło (1/2/3) lub zakończenie (exit): " << GOLD;
 };

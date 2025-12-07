@@ -132,12 +132,21 @@ void game::gameInit(const int64_t playerId) {
 	// [0] = 50:50, [1] = phone, [2] = publicity
 	std::array<bool, 3> resque = {true, true, true};
 
+	const int guarantee[] = {0, 0, 2000, 2000, 2000, 2000, 2000, 50000, 50000, 50000, 50000, 50000};
+	const int moneyTree[] = {0, 1000, 2000, 5000, 10000, 15000, 25000, 50000, 75000, 125000, 250000, 500000};
+	int money = 0;
+
 	for(int i = 0; i < 12; i++) {
 		clearScreen();
 		const auto optQuestion = getQuestion(i + 1);
 		if(!optQuestion.has_value()) {
 			std::cerr << "Nie można pobrać pytania, powrót do menu głównego za 5 sekund..." << std::endl;
+			money = moneyTree[i];
+			if(!updateMoney(playerId, money)) {
+				std::cout << "Niestety nie mogliśmy zaktualizować twojego salda :(" << std::endl;
+			}
 			std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+			showTitle();
 			mainMenu::showMenu(false);
 			return;
 		}
@@ -150,7 +159,12 @@ void game::gameInit(const int64_t playerId) {
 		auto it = std::find(question.begin() + 1, question.end(), correctAnswerStr);
 		if(it == question.end()) {
 			std::cerr << "Wystąpił błąd wewnętrzny, powrót do menu głównego za 5 sekund..." << std::endl;
+			money = moneyTree[i];
+			if(!updateMoney(playerId, money)) {
+				std::cout << "Niestety nie mogliśmy zaktualizować twojego salda :(" << std::endl;
+			}
 			std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+			showTitle();
 			mainMenu::showMenu(false);
 			return;
 		}
@@ -163,6 +177,11 @@ void game::gameInit(const int64_t playerId) {
 
 			std::string answerStringChar = getAnswer(resque);
 			if(answerStringChar == "exit") {
+				money = moneyTree[i];
+				if(!updateMoney(playerId, money)) {
+					std::cout << "Niestety nie mogliśmy zaktualizować twojego salda :(" << std::endl;
+				}
+				showTitle();
 				mainMenu::showMenu(true);
 				return;
 			}
@@ -203,12 +222,30 @@ void game::gameInit(const int64_t playerId) {
 
 			if(choosedChar >= 'A' && choosedChar <= 'D') {
 				if(choosedChar == correctAnswerChar) {
-					std::cout << "Gratulację, poprawna odpowiedź! Przechodzimy do pytania " << (i + 2) << std:: endl;
+					std::cout << "Gratulację, poprawna odpowiedź! " << (i == 11 ? "WYGRAŁEŚ MILION!!!" : ("Przechodzimy do pytania " + std::to_string(i + 2))) << std:: endl;
+					money = guarantee[i];
+					if(i == 11) {
+						if(!updateMoney(playerId, 1000000)) {
+							std::cout << "Niestety nie mogliśmy zaktualizować twojego salda :(" << std::endl;
+						}
+						if(!updateWins(playerId)) {
+							std::cout << "Niestety nie mogliśmy zaktualizować twoich wygranych :(" << std::endl;
+						}
+					}
 					std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+					if(i == 11) {
+						showTitle();
+						mainMenu::showMenu(true);
+					}
 				}
 				else {
-					std::cout << "Niestety, to jest niepoprawna odpowiedź, powrót do menu głównego..." << std::endl;
+					std::cout << "Niestety, to jest niepoprawna odpowiedź, powrót do menu głównego..." << std::endl;\
+					money = guarantee[(i == 11 ? 10 : i)];
+					if(!updateMoney(playerId, money)) {
+						std::cout << "Niestety nie mogliśmy zaktualizować twojego salda :(" << std::endl;
+					}
 					std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+					showTitle();
 					mainMenu::showMenu(true);
 				}
 				break;
@@ -280,4 +317,14 @@ void game::generateRescue(const int type, const char correct) {
 		std::cin.get();
 		return;
 	}
+}
+
+bool game::updateMoney(const int64_t playerId, const int money) {
+	mysqlx::string query = std::format("UPDATE `players` SET `money` = `money` + {} WHERE `id` = {}", money, playerId);
+	return dbQuerys::updateLine(query);
+}
+
+bool game::updateWins(const int64_t playerId) {
+	mysqlx::string query = std::format("UPDATE `players` SET `wins` = `wins` + 1 WHERE `id` = {}", playerId);
+	return dbQuerys::updateLine(query);
 }

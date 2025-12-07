@@ -19,6 +19,8 @@ private:
 	static std::optional<std::array<std::string, 5>> getQuestion(int level);
 	static void generateRescue(int type, char correct);
 	static std::string getAnswer(std::array<bool, 3> resque);
+	static bool updateMoney(int64_t playerId, int money);
+	static bool updateWins(int64_t playerId);
 	friend class startGame;
 };
 
