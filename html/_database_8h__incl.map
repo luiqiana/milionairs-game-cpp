@@ -1,0 +1,9 @@
+<map id="database/Database.h" name="database/Database.h">
+<area shape="rect" id="Node000001" title="Header file for the Database singleton class managing MySQL connections." alt="" coords="71,5,217,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,59,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,33,65,73,62,68,123,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="82,79,206,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,29,146,64,142,62,142,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="230,79,298,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,29,233,70,228,71,164,34"/>
+</map>

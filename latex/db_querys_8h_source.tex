@@ -1,0 +1,25 @@
+\doxysection{db\+Querys.\+h}
+\hypertarget{db_querys_8h_source}{}\label{db_querys_8h_source}\index{database/dbQuerys.h@{database/dbQuerys.h}}
+\mbox{\hyperlink{db_querys_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MIL\_DBQUERYS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MIL\_DBQUERYS\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <mysqlx/xdevapi.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdb_querys}{dbQuerys}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ std::optional<mysqlx::RowResult>\ \mbox{\hyperlink{classdb_querys_af3a5dac33cdcf206aac2d9e7c9197d50}{selRows}}(mysqlx::string\ queryString);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ int64\_t\ \mbox{\hyperlink{classdb_querys_a7af4da56fbb97bc5c96c8a2706886724}{insertLine}}(mysqlx::string\ queryString);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdb_querys_a29d4c131eddfc70fcbfd575ec6a11e0f}{updateLine}}(mysqlx::string\ queryString);}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MIL\_DBQUERYS\_H}}
+
+\end{DoxyCode}

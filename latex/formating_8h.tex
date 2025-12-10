@@ -1,0 +1,68 @@
+\doxysection{utils/formating.h File Reference}
+\hypertarget{formating_8h}{}\label{formating_8h}\index{utils/formating.h@{utils/formating.h}}
+
+
+Header file defining ANSI escape codes for console text formatting.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for formating.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{formating_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{formating_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{formating_8h_a2f0a977841de68d04e86bc84c57c3ff3}\label{formating_8h_a2f0a977841de68d04e86bc84c57c3ff3} 
+const std\+::string {\bfseries RESET} = "{}\textbackslash{}033\mbox{[}0m"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape code to reset all text formatting (colors and styles) to default. \end{DoxyCompactList}\item 
+\Hypertarget{formating_8h_ac9a7670c3012a412bd3fefd424da3f50}\label{formating_8h_ac9a7670c3012a412bd3fefd424da3f50} 
+const std\+::string {\bfseries BOLD} = "{}\textbackslash{}033\mbox{[}1m"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape code to apply BOLD style to the text. \end{DoxyCompactList}\item 
+\Hypertarget{formating_8h_a1e3de85aa0ad921f6984f3aef7361f99}\label{formating_8h_a1e3de85aa0ad921f6984f3aef7361f99} 
+const std\+::string {\bfseries RED} = "{}\textbackslash{}033\mbox{[}31m"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape code for RED text color. \end{DoxyCompactList}\item 
+\Hypertarget{formating_8h_ace790543ffe3663a896a5f074bd2a3ef}\label{formating_8h_ace790543ffe3663a896a5f074bd2a3ef} 
+const std\+::string {\bfseries GREEN} = "{}\textbackslash{}033\mbox{[}32m"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape code for GREEN text color. \end{DoxyCompactList}\item 
+\Hypertarget{formating_8h_ac1965adc92c3076b04d6cd16f36e8f77}\label{formating_8h_ac1965adc92c3076b04d6cd16f36e8f77} 
+const std\+::string {\bfseries CYAN} = "{}\textbackslash{}033\mbox{[}36m"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape code for CYAN text color. \end{DoxyCompactList}\item 
+\Hypertarget{formating_8h_a8bc779337e61d3ab6ad13f81e102f327}\label{formating_8h_a8bc779337e61d3ab6ad13f81e102f327} 
+const std\+::string {\bfseries YELLOW} = "{}\textbackslash{}033\mbox{[}33m"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape code for YELLOW text color. \end{DoxyCompactList}\item 
+\Hypertarget{formating_8h_a1348240d1117e342ee3bb828bcb28bd7}\label{formating_8h_a1348240d1117e342ee3bb828bcb28bd7} 
+const std\+::string {\bfseries GOLD} = "{}\textbackslash{}033\mbox{[}38;5;220m"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape code for GOLD text color (uses extended 256-\/color palette). \end{DoxyCompactList}\item 
+\Hypertarget{formating_8h_afdf30f11ffd0eb33b68541b31518fa6f}\label{formating_8h_afdf30f11ffd0eb33b68541b31518fa6f} 
+const std\+::string {\bfseries WHITE} = "{}\textbackslash{}033\mbox{[}37m"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape code for WHITE text color. \end{DoxyCompactList}\item 
+\Hypertarget{formating_8h_aacd5164ed9c9701c9073d167eabfe638}\label{formating_8h_aacd5164ed9c9701c9073d167eabfe638} 
+const std\+::string {\bfseries BLACK} = "{}\textbackslash{}033\mbox{[}30m"{}
+\begin{DoxyCompactList}\small\item\em ANSI escape code for BLACK text color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file defining ANSI escape codes for console text formatting. 
+
+\begin{DoxyAuthor}{Author}
+Hania Potępa 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/12/2025
+\begin{DoxyItemize}
+\item Contains constant strings used to change text color and style in terminal output. 
+\end{DoxyItemize}
+\end{DoxyDate}

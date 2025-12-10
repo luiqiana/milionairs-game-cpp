@@ -1,0 +1,117 @@
+\doxysection{database/env\+Loader.h File Reference}
+\hypertarget{env_loader_8h}{}\label{env_loader_8h}\index{database/envLoader.h@{database/envLoader.h}}
+
+
+Header file containing inline utility functions for environment variable management.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+Include dependency graph for env\+Loader.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{env_loader_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{env_loader_8h_ac6c4c6bb59fc9cb672877a0ac95c1646}{get\+Env\+Var}} (const char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Retrieves the value of a system environment variable. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{env_loader_8h_a5a01f705cc7b4a7317a57f6bf41aef25}{trim}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Trims leading and trailing whitespace characters from a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{env_loader_8h_ad5b5401900c735ea21b5e15b78ca33e8}{load\+Env}} ()
+\begin{DoxyCompactList}\small\item\em Loads environment variables from a .env file into the current process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file containing inline utility functions for environment variable management. 
+
+\begin{DoxyAuthor}{Author}
+Hania Potępa 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/12/2025 
+\end{DoxyDate}
+
+
+\label{doc-func-members}
+\Hypertarget{env_loader_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{env_loader_8h_ac6c4c6bb59fc9cb672877a0ac95c1646}\index{envLoader.h@{envLoader.h}!getEnvVar@{getEnvVar}}
+\index{getEnvVar@{getEnvVar}!envLoader.h@{envLoader.h}}
+\doxysubsubsection{\texorpdfstring{getEnvVar()}{getEnvVar()}}
+{\footnotesize\ttfamily \label{env_loader_8h_ac6c4c6bb59fc9cb672877a0ac95c1646} 
+std\+::string get\+Env\+Var (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the value of a system environment variable. 
+
+
+\begin{DoxyItemize}
+\item This is a safe wrapper around the standard std\+::getenv function. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The name of the environment variable (C-\/string). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the variable as a std\+::string, or an empty string if the variable is not set. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{env_loader_8h_ad5b5401900c735ea21b5e15b78ca33e8}\index{envLoader.h@{envLoader.h}!loadEnv@{loadEnv}}
+\index{loadEnv@{loadEnv}!envLoader.h@{envLoader.h}}
+\doxysubsubsection{\texorpdfstring{loadEnv()}{loadEnv()}}
+{\footnotesize\ttfamily \label{env_loader_8h_ad5b5401900c735ea21b5e15b78ca33e8} 
+void load\+Env (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads environment variables from a .env file into the current process. 
+
+
+\begin{DoxyItemize}
+\item Reads the file located at "{}./database/.\+env"{}.
+\item Parses "{}\+KEY=\+VALUE"{} pairs and sets them using setenv().
+\item Ignores empty lines and comments starting with \textquotesingle{}\#\textquotesingle{}. 
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{env_loader_8h_ad5b5401900c735ea21b5e15b78ca33e8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{env_loader_8h_a5a01f705cc7b4a7317a57f6bf41aef25}\index{envLoader.h@{envLoader.h}!trim@{trim}}
+\index{trim@{trim}!envLoader.h@{envLoader.h}}
+\doxysubsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily \label{env_loader_8h_a5a01f705cc7b4a7317a57f6bf41aef25} 
+std\+::string trim (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Trims leading and trailing whitespace characters from a string. 
+
+
+\begin{DoxyItemize}
+\item Removes spaces, tabs, and newlines from the beginning and end of the input. 
+\begin{DoxyParams}{Parameters}
+{\em str} & The input string to be trimmed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new std\+::string containing the trimmed text. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{env_loader_8h_a5a01f705cc7b4a7317a57f6bf41aef25_icgraph}
+\end{center}
+\end{figure}

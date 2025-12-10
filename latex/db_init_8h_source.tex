@@ -1,0 +1,25 @@
+\doxysection{db\+Init.\+h}
+\hypertarget{db_init_8h_source}{}\label{db_init_8h_source}\index{database/dbInit.h@{database/dbInit.h}}
+\mbox{\hyperlink{db_init_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MIL\_DBINIT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MIL\_DBINIT\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <mysqlx/xdevapi.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdb_init}{dbInit}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdb_init_aeb9652594c1ad6ee4b77fec479ba84b7}{init}}(mysqlx::Session\ \&session,\ \textcolor{keyword}{const}\ std::string\ \&dbName);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ executeScriptFromFile(mysqlx::Session\ \&session,\ \textcolor{keyword}{const}\ std::string\ \&fileName);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ recordsEmpty(mysqlx::Session\ \&session,\ \textcolor{keyword}{const}\ mysqlx::string\&\ query);}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MIL\_DBINIT\_H}}
+
+\end{DoxyCode}

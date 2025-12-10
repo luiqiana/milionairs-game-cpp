@@ -1,0 +1,9 @@
+<map id="Database::getSession" name="Database::getSession">
+<area shape="rect" id="Node000001" title="Retrieves the active database session." alt="" coords="202,55,352,80"/>
+<area shape="rect" id="Node000002" href="$classdb_querys.html#a7af4da56fbb97bc5c96c8a2706886724" title="Executes an INSERT query to add new rows to the database." alt="" coords="9,5,150,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,51,134,34,134,29,210,49"/>
+<area shape="rect" id="Node000003" href="$classdb_querys.html#af3a5dac33cdcf206aac2d9e7c9197d50" title="Executes a SELECT query to retrieve rows from the database." alt="" coords="11,55,148,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,68,148,70,147,65,189,67"/>
+<area shape="rect" id="Node000004" href="$classdb_querys.html#a29d4c131eddfc70fcbfd575ec6a11e0f" title="Executes an UPDATE query to modify existing records." alt="" coords="5,104,154,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="210,84,135,106,133,101,205,85"/>
+</map>

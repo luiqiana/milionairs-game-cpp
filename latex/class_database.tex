@@ -1,0 +1,99 @@
+\doxysection{Database Class Reference}
+\hypertarget{class_database}{}\label{class_database}\index{Database@{Database}}
+
+
+A Singleton class responsible for handling the My\+SQL database connection.  
+
+
+
+
+{\ttfamily \#include $<$Database.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_database_a84d399a2ad58d69daab9b05330e1316d}\label{class_database_a84d399a2ad58d69daab9b05330e1316d} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Database} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Safely closes the database session and releases associated resources. \end{DoxyCompactList}\item 
+\Hypertarget{class_database_a83f8b6d2941a4aee50f225e08e97291c}\label{class_database_a83f8b6d2941a4aee50f225e08e97291c} 
+{\bfseries Database} (const \mbox{\hyperlink{class_database}{Database}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. Prevents the creation of a copy of the \doxylink{class_database}{Database} instance, ensuring uniqueness. \end{DoxyCompactList}\item 
+\Hypertarget{class_database_a46b93a4878076c7cfddd5b4058297f14}\label{class_database_a46b93a4878076c7cfddd5b4058297f14} 
+\mbox{\hyperlink{class_database}{Database}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_database}{Database}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator. Prevents assigning one \doxylink{class_database}{Database} instance to another to enforce the Singleton pattern. \end{DoxyCompactList}\item 
+mysqlx\+::\+Session \& \mbox{\hyperlink{class_database_aec56819c9272115190f77628c24ee943}{get\+Session}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the active database session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_database}{Database}} \& \mbox{\hyperlink{class_database_a0cf325405d417d8531d6c9605fd82a5e}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the single instance of the \doxylink{class_database}{Database} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Singleton class responsible for handling the My\+SQL database connection. 
+
+
+\begin{DoxyItemize}
+\item This class establishes a session with the database using the mysqlx library. The Singleton pattern ensures that only one database connection instance exists throughout the application\textquotesingle{}s lifecycle, optimizing resource usage. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_database_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_database_a0cf325405d417d8531d6c9605fd82a5e}\index{Database@{Database}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_database_a0cf325405d417d8531d6c9605fd82a5e} 
+\mbox{\hyperlink{class_database}{Database}} \& Database\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the single instance of the \doxylink{class_database}{Database} class. 
+
+
+\begin{DoxyItemize}
+\item Uses lazy initialization to create the instance upon the first call.
+\item \begin{DoxyReturn}{Returns}
+A reference to the static \doxylink{class_database}{Database} instance. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_database_a0cf325405d417d8531d6c9605fd82a5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_aec56819c9272115190f77628c24ee943}\index{Database@{Database}!getSession@{getSession}}
+\index{getSession@{getSession}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{getSession()}{getSession()}}
+{\footnotesize\ttfamily \label{class_database_aec56819c9272115190f77628c24ee943} 
+mysqlx\+::\+Session \& Database\+::get\+Session (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the active database session. 
+
+
+\begin{DoxyItemize}
+\item This method allows other parts of the application to execute SQL queries using the established connection.
+\item \begin{DoxyReturn}{Returns}
+A reference to the current mysqlx\+::\+Session object. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_database_aec56819c9272115190f77628c24ee943_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+database/\mbox{\hyperlink{_database_8h}{Database.\+h}}\item 
+database/Database.\+cpp\end{DoxyCompactItemize}

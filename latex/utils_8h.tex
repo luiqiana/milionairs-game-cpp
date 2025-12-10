@@ -1,0 +1,251 @@
+\doxysection{utils/utils.h File Reference}
+\hypertarget{utils_8h}{}\label{utils_8h}\index{utils/utils.h@{utils/utils.h}}
+
+
+Header file containing general utility functions for the game.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include "{}./formating.\+h"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+Include dependency graph for utils.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{utils_8h_a151ebab265ee8601c8fdf152490f88d1}{get\+Huge\+Number}} (int num)
+\begin{DoxyCompactList}\small\item\em Returns an ASCII art representation of a number (1, 2, or 3). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{clear\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Clears the console screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_a885dd526821aa0f602751ab73beee8c1}{huge\+Countdown}} ()
+\begin{DoxyCompactList}\small\item\em Displays a large animated countdown (3... 2... 1...). \end{DoxyCompactList}\item 
+\Hypertarget{utils_8h_ab47a0ed2bf3632096115488222cbb83b}\label{utils_8h_ab47a0ed2bf3632096115488222cbb83b} 
+void {\bfseries show\+Title} ()
+\begin{DoxyCompactList}\small\item\em Displays the main "{}\+MILIONERZY"{} game logo in ASCII art. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_a3d364a367d391a772a335a6624777d1c}{start\+Game\+Header}} ()
+\begin{DoxyCompactList}\small\item\em Displays the introductory sequence ("{}\+START ZA\+:"{} text). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_af9deef4c01bb7a933c0d0eb7e63739b5}{game\+End}} (const int code, const std\+::string error="{}"{})
+\begin{DoxyCompactList}\small\item\em Terminates the game application. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utils_8h_a1a3115ce72ed8fca24f9e80b607f41bd}{is\+Alphanumeric}} (const std\+::string str)
+\begin{DoxyCompactList}\small\item\em Checks if a string contains only alphanumeric characters (letters and numbers). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \mbox{\hyperlink{utils_8h_a0b56e6d9fe913c758d340dcbd53b85b6}{get\+RandomC}} (const T min, const T max)
+\begin{DoxyCompactList}\small\item\em Generates a thread-\/safe random integer within a specified range. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{utils_8h_a03fe2253da6873074bef415670082239}{to\+Upper\+Case}} (const char c)
+\begin{DoxyCompactList}\small\item\em Converts a lowercase character to uppercase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file containing general utility functions for the game. 
+
+\begin{DoxyAuthor}{Author}
+Hania Potępa 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/12/2025
+\begin{DoxyItemize}
+\item Includes helper functions for UI (ASCII art, screen clearing), input validation, and random number generation. 
+\end{DoxyItemize}
+\end{DoxyDate}
+
+
+\label{doc-func-members}
+\Hypertarget{utils_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}\index{utils.h@{utils.h}!clearScreen@{clearScreen}}
+\index{clearScreen@{clearScreen}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{clearScreen()}{clearScreen()}}
+{\footnotesize\ttfamily \label{utils_8h_a9d7e8af417b6d543da691e9c0e2f6f9f} 
+void clear\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clears the console screen. 
+
+
+\begin{DoxyItemize}
+\item Uses the system command "{}clear"{} (Linux/mac\+OS). 
+\end{DoxyItemize}Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{utils_8h_a9d7e8af417b6d543da691e9c0e2f6f9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{utils_8h_af9deef4c01bb7a933c0d0eb7e63739b5}\index{utils.h@{utils.h}!gameEnd@{gameEnd}}
+\index{gameEnd@{gameEnd}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{gameEnd()}{gameEnd()}}
+{\footnotesize\ttfamily \label{utils_8h_af9deef4c01bb7a933c0d0eb7e63739b5} 
+void game\+End (\begin{DoxyParamCaption}\item[{const int}]{code}{, }\item[{const std\+::string}]{error}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Terminates the game application. 
+
+
+\begin{DoxyItemize}
+\item Displays a goodbye message or an error message depending on the exit code. 
+\begin{DoxyParams}{Parameters}
+{\em code} & Exit status code (0 for success, non-\/zero for error). \\
+\hline
+{\em error} & Optional error message to display if code is non-\/zero. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{utils_8h_a151ebab265ee8601c8fdf152490f88d1}\index{utils.h@{utils.h}!getHugeNumber@{getHugeNumber}}
+\index{getHugeNumber@{getHugeNumber}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{getHugeNumber()}{getHugeNumber()}}
+{\footnotesize\ttfamily \label{utils_8h_a151ebab265ee8601c8fdf152490f88d1} 
+std\+::string get\+Huge\+Number (\begin{DoxyParamCaption}\item[{int}]{num}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns an ASCII art representation of a number (1, 2, or 3). 
+
+
+\begin{DoxyItemize}
+\item Used for the countdown animation. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The integer to convert (supported values\+: 1, 2, 3). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string containing the ASCII art or empty string if num is out of range. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{utils_8h_a0b56e6d9fe913c758d340dcbd53b85b6}\index{utils.h@{utils.h}!getRandomC@{getRandomC}}
+\index{getRandomC@{getRandomC}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{getRandomC()}{getRandomC()}}
+{\footnotesize\ttfamily \label{utils_8h_a0b56e6d9fe913c758d340dcbd53b85b6} 
+template$<$typename T$>$ \\
+T get\+RandomC (\begin{DoxyParamCaption}\item[{const T}]{min}{, }\item[{const T}]{max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a thread-\/safe random integer within a specified range. 
+
+
+\begin{DoxyItemize}
+\item Uses std\+::mt19937\+\_\+64 engine seeded with std\+::random\+\_\+device. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The integer type (int, long, int64\+\_\+t). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Inclusive lower bound. \\
+\hline
+{\em max} & Inclusive upper bound. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A random value of type T between min and max. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{utils_8h_a0b56e6d9fe913c758d340dcbd53b85b6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{utils_8h_a885dd526821aa0f602751ab73beee8c1}\index{utils.h@{utils.h}!hugeCountdown@{hugeCountdown}}
+\index{hugeCountdown@{hugeCountdown}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{hugeCountdown()}{hugeCountdown()}}
+{\footnotesize\ttfamily \label{utils_8h_a885dd526821aa0f602751ab73beee8c1} 
+void huge\+Countdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Displays a large animated countdown (3... 2... 1...). 
+
+
+\begin{DoxyItemize}
+\item Clears the screen between numbers and waits for 1 second. 
+\end{DoxyItemize}Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{utils_8h_a885dd526821aa0f602751ab73beee8c1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{utils_8h_a1a3115ce72ed8fca24f9e80b607f41bd}\index{utils.h@{utils.h}!isAlphanumeric@{isAlphanumeric}}
+\index{isAlphanumeric@{isAlphanumeric}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{isAlphanumeric()}{isAlphanumeric()}}
+{\footnotesize\ttfamily \label{utils_8h_a1a3115ce72ed8fca24f9e80b607f41bd} 
+bool is\+Alphanumeric (\begin{DoxyParamCaption}\item[{const std\+::string}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a string contains only alphanumeric characters (letters and numbers). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the string is not empty and alphanumeric, False otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{utils_8h_a1a3115ce72ed8fca24f9e80b607f41bd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{utils_8h_a3d364a367d391a772a335a6624777d1c}\index{utils.h@{utils.h}!startGameHeader@{startGameHeader}}
+\index{startGameHeader@{startGameHeader}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{startGameHeader()}{startGameHeader()}}
+{\footnotesize\ttfamily \label{utils_8h_a3d364a367d391a772a335a6624777d1c} 
+void start\+Game\+Header (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Displays the introductory sequence ("{}\+START ZA\+:"{} text). 
+
+
+\begin{DoxyItemize}
+\item Triggers the countdown and then shows the main title. 
+\end{DoxyItemize}\Hypertarget{utils_8h_a03fe2253da6873074bef415670082239}\index{utils.h@{utils.h}!toUpperCase@{toUpperCase}}
+\index{toUpperCase@{toUpperCase}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{toUpperCase()}{toUpperCase()}}
+{\footnotesize\ttfamily \label{utils_8h_a03fe2253da6873074bef415670082239} 
+char to\+Upper\+Case (\begin{DoxyParamCaption}\item[{const char}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts a lowercase character to uppercase. 
+
+
+\begin{DoxyItemize}
+\item Calculates the ASCII difference between \textquotesingle{}a\textquotesingle{} and \textquotesingle{}A\textquotesingle{}. 
+\begin{DoxyParams}{Parameters}
+{\em c} & The character to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The uppercase version of the character. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}

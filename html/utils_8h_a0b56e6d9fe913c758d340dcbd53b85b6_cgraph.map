@@ -1,0 +1,5 @@
+<map id="getRandomC" name="getRandomC">
+<area shape="rect" id="Node000001" title="Generates a thread&#45;safe random integer within a specified range." alt="" coords="5,5,104,31"/>
+<area shape="rect" id="Node000002" href="$utils_8h.html#ab47a0ed2bf3632096115488222cbb83b" title="Displays the main &quot;MILIONERZY&quot; game logo in ASCII art." alt="" coords="152,5,229,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,16,139,18,133,18,104,21"/>
+</map>

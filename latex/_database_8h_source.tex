@@ -1,0 +1,39 @@
+\doxysection{Database.\+h}
+\hypertarget{_database_8h_source}{}\label{_database_8h_source}\index{database/Database.h@{database/Database.h}}
+\mbox{\hyperlink{_database_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MIL\_DATABASE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MIL\_DATABASE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <mysqlx/xdevapi.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }Database\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ std::unique\_ptr<mysqlx::Session>\ session;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ dbName;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ Database();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_database_a84d399a2ad58d69daab9b05330e1316d}{\string~Database}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_database_a83f8b6d2941a4aee50f225e08e97291c}{Database}}(\textcolor{keyword}{const}\ Database\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ Database\ \&\mbox{\hyperlink{class_database_a46b93a4878076c7cfddd5b4058297f14}{operator=}}(\textcolor{keyword}{const}\ Database\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \ \ mysqlx::Session\ \&\mbox{\hyperlink{class_database_aec56819c9272115190f77628c24ee943}{getSession}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ Database\ \&\mbox{\hyperlink{class_database_a0cf325405d417d8531d6c9605fd82a5e}{getInstance}}()\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Database\ instance;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MIL\_DATABASE\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,9 @@
+<map id="mainMenu::showMenu" name="mainMenu::showMenu">
+<area shape="rect" id="Node000001" title="Renders the main menu options to the screen." alt="" coords="244,55,396,80"/>
+<area shape="rect" id="Node000002" href="$credentials_8h.html#a002eb4892b4d90103c28acb6aac7f8a0" title="Displays the application credentials/credits screen." alt="" coords="41,5,160,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,52,160,34,160,29,247,50"/>
+<area shape="rect" id="Node000003" href="$classshow_stats.html#a6ccba28060a66aa0ab98e7b931b2c51a" title="Displays the search menu for player statistics." alt="" coords="5,55,196,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,68,196,70,196,65,231,67"/>
+<area shape="rect" id="Node000004" href="$classstart_game.html#a99684f1d5885ce159021c8d19d24f87f" title="Main entry point to start a new game session." alt="" coords="42,104,159,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="247,84,160,106,159,101,242,85"/>
+</map>

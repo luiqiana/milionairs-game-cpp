@@ -1,0 +1,5 @@
+<map id="loadEnv" name="loadEnv">
+<area shape="rect" id="Node000001" title="Loads environment variables from a .env file into the current process." alt="" coords="5,5,74,31"/>
+<area shape="rect" id="Node000002" href="$env_loader_8h.html#a5a01f705cc7b4a7317a57f6bf41aef25" title="Trims leading and trailing whitespace characters from a string." alt="" coords="122,5,165,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,16,109,18,104,19,74,21"/>
+</map>

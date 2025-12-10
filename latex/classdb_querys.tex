@@ -1,0 +1,117 @@
+\doxysection{db\+Querys Class Reference}
+\hypertarget{classdb_querys}{}\label{classdb_querys}\index{dbQuerys@{dbQuerys}}
+
+
+A static utility class for executing raw SQL queries.  
+
+
+
+
+{\ttfamily \#include $<$db\+Querys.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::optional$<$ mysqlx\+::\+Row\+Result $>$ \mbox{\hyperlink{classdb_querys_af3a5dac33cdcf206aac2d9e7c9197d50}{sel\+Rows}} (mysqlx\+::string query\+String)
+\begin{DoxyCompactList}\small\item\em Executes a SELECT query to retrieve rows from the database. \end{DoxyCompactList}\item 
+static int64\+\_\+t \mbox{\hyperlink{classdb_querys_a7af4da56fbb97bc5c96c8a2706886724}{insert\+Line}} (mysqlx\+::string query\+String)
+\begin{DoxyCompactList}\small\item\em Executes an INSERT query to add new rows to the database. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classdb_querys_a29d4c131eddfc70fcbfd575ec6a11e0f}{update\+Line}} (mysqlx\+::string query\+String)
+\begin{DoxyCompactList}\small\item\em Executes an UPDATE query to modify existing records. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A static utility class for executing raw SQL queries. 
+
+
+\begin{DoxyItemize}
+\item This class provides a simplified interface for standard CRUD operations (SELECT, INSERT, UPDATE) using the mysqlx library. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classdb_querys_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdb_querys_a7af4da56fbb97bc5c96c8a2706886724}\index{dbQuerys@{dbQuerys}!insertLine@{insertLine}}
+\index{insertLine@{insertLine}!dbQuerys@{dbQuerys}}
+\doxysubsubsection{\texorpdfstring{insertLine()}{insertLine()}}
+{\footnotesize\ttfamily \label{classdb_querys_a7af4da56fbb97bc5c96c8a2706886724} 
+int64\+\_\+t db\+Querys\+::insert\+Line (\begin{DoxyParamCaption}\item[{mysqlx\+::string}]{query\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Executes an INSERT query to add new rows to the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+String} & The SQL INSERT statement. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ID of the inserted row (int64\+\_\+t) if successful, or -\/1 if a database error occurred. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classdb_querys_a7af4da56fbb97bc5c96c8a2706886724_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classdb_querys_af3a5dac33cdcf206aac2d9e7c9197d50}\index{dbQuerys@{dbQuerys}!selRows@{selRows}}
+\index{selRows@{selRows}!dbQuerys@{dbQuerys}}
+\doxysubsubsection{\texorpdfstring{selRows()}{selRows()}}
+{\footnotesize\ttfamily \label{classdb_querys_af3a5dac33cdcf206aac2d9e7c9197d50} 
+std\+::optional$<$ mysqlx\+::\+Row\+Result $>$ db\+Querys\+::sel\+Rows (\begin{DoxyParamCaption}\item[{mysqlx\+::string}]{query\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Executes a SELECT query to retrieve rows from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+String} & The SQL query string to be executed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$mysqlx\+::\+Row\+Result$>$ containing the result set if successful, or std\+::nullopt if a database error occurred. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classdb_querys_af3a5dac33cdcf206aac2d9e7c9197d50_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classdb_querys_a29d4c131eddfc70fcbfd575ec6a11e0f}\index{dbQuerys@{dbQuerys}!updateLine@{updateLine}}
+\index{updateLine@{updateLine}!dbQuerys@{dbQuerys}}
+\doxysubsubsection{\texorpdfstring{updateLine()}{updateLine()}}
+{\footnotesize\ttfamily \label{classdb_querys_a29d4c131eddfc70fcbfd575ec6a11e0f} 
+bool db\+Querys\+::update\+Line (\begin{DoxyParamCaption}\item[{mysqlx\+::string}]{query\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Executes an UPDATE query to modify existing records. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+String} & The SQL UPDATE statement. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the update operation was successful, False otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classdb_querys_a29d4c131eddfc70fcbfd575ec6a11e0f_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+database/\mbox{\hyperlink{db_querys_8h}{db\+Querys.\+h}}\item 
+database/db\+Querys.\+cpp\end{DoxyCompactItemize}

@@ -26,6 +26,7 @@ bool game::useResque(int64_t playerId, const std::string type) {
 	mysqlx::string query = std::format("UPDATE `players` SET `{}` = `{}` + 1 WHERE `id` = {}", type, type, playerId);
 	return dbQuerys::updateLine(query);
 }
+
 // Method that get questions from database, and choose random one, it need int value as question's difficulty level, return std::array with quetion and anserws or std::nullopt as error with database
 // std::array[0] = question, std::array[1] = correct answer, std::array[2 to 4] as bad answers
 std::optional<std::array<std::string, 5>> game::getQuestion(const int level) {

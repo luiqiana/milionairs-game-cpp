@@ -1,0 +1,55 @@
+\doxysection{db\+Init Class Reference}
+\hypertarget{classdb_init}{}\label{classdb_init}\index{dbInit@{dbInit}}
+
+
+A utility class responsible for initializing the database structure and content.  
+
+
+
+
+{\ttfamily \#include $<$db\+Init.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classdb_init_aeb9652594c1ad6ee4b77fec479ba84b7}{init}} (mysqlx\+::\+Session \&session, const std\+::string \&db\+Name)
+\begin{DoxyCompactList}\small\item\em Initializes the database schema and default data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class responsible for initializing the database structure and content. 
+
+
+\begin{DoxyItemize}
+\item Contains static methods to execute SQL scripts and verify if tables are populated. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{classdb_init_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdb_init_aeb9652594c1ad6ee4b77fec479ba84b7}\index{dbInit@{dbInit}!init@{init}}
+\index{init@{init}!dbInit@{dbInit}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classdb_init_aeb9652594c1ad6ee4b77fec479ba84b7} 
+void db\+Init\+::init (\begin{DoxyParamCaption}\item[{mysqlx\+::\+Session \&}]{session}{, }\item[{const std\+::string \&}]{db\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the database schema and default data. 
+
+
+\begin{DoxyItemize}
+\item This method sets up the necessary tables and seeds them with data if needed. 
+\begin{DoxyParams}{Parameters}
+{\em session} & Reference to the active My\+SQL session. \\
+\hline
+{\em db\+Name} & The name of the database to initialize. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+database/\mbox{\hyperlink{db_init_8h}{db\+Init.\+h}}\item 
+database/db\+Init.\+cpp\end{DoxyCompactItemize}

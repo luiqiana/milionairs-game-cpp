@@ -1,0 +1,5 @@
+<map id="trim" name="trim">
+<area shape="rect" id="Node000001" title="Trims leading and trailing whitespace characters from a string." alt="" coords="122,5,165,31"/>
+<area shape="rect" id="Node000002" href="$env_loader_8h.html#ad5b5401900c735ea21b5e15b78ca33e8" title="Loads environment variables from a .env file into the current process." alt="" coords="5,5,74,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,19,74,21,74,16,108,18"/>
+</map>

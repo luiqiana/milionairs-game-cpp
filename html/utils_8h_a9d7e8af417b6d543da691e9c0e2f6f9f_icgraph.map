@@ -1,0 +1,5 @@
+<map id="clearScreen" name="clearScreen">
+<area shape="rect" id="Node000001" title="Clears the console screen." alt="" coords="164,5,254,31"/>
+<area shape="rect" id="Node000002" href="$utils_8h.html#a1a3115ce72ed8fca24f9e80b607f41bd" title="Checks if a string contains only alphanumeric characters (letters and numbers)." alt="" coords="5,5,116,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,18,116,21,116,16,150,18"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="showTop::showTopPlayers" name="showTop::showTopPlayers">
+<area shape="rect" id="Node000001" title="Generates the main Top Players menu." alt="" coords="5,5,183,31"/>
+<area shape="rect" id="Node000002" href="$utils_8h.html#ab47a0ed2bf3632096115488222cbb83b" title="Displays the main &quot;MILIONERZY&quot; game logo in ASCII art." alt="" coords="231,5,308,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,16,218,18,212,18,183,21"/>
+</map>

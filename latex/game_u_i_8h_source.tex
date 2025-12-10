@@ -1,0 +1,35 @@
+\doxysection{game\+UI.\+h}
+\hypertarget{game_u_i_8h_source}{}\label{game_u_i_8h_source}\index{interface/game/gameUI.h@{interface/game/gameUI.h}}
+\mbox{\hyperlink{game_u_i_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MIL\_GAMEUI\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MIL\_GAMEUI\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game_8h}{./game.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame_u_i}{gameUI}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ drawMoneyTree(\textcolor{keywordtype}{int}\ currentLevel);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ drawQuestion(std::string\ \&question,\ std::string\ \&a,\ std::string\ \&b,\ std::string\ \&c,\ std::string\ \&d);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ drawResque(\textcolor{keywordtype}{bool}\ has5050,\ \textcolor{keywordtype}{bool}\ hasPhone,\ \textcolor{keywordtype}{bool}\ hasPublicity);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ drawCombined(\textcolor{keywordtype}{int}\ level,\ std::array<std::string,\ 5>\ \&question,\ std::array<bool,\ 3>\ resque);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ gotoXY(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ bgColor(std::string\ color);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ Grant\ access\ to\ the\ game\ class\ to\ use\ these\ private\ drawing\ methods}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }game;}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MIL\_GAMEUI\_H}}
+
+\end{DoxyCode}

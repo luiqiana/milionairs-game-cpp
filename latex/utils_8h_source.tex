@@ -1,0 +1,124 @@
+\doxysection{utils.\+h}
+\hypertarget{utils_8h_source}{}\label{utils_8h_source}\index{utils/utils.h@{utils/utils.h}}
+\mbox{\hyperlink{utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ MIL\_UTILS\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MIL\_UTILS\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{formating_8h}{./formating.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{utils_8h_a151ebab265ee8601c8fdf152490f88d1}{getHugeNumber}}(\textcolor{keywordtype}{int}\ num)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{switch}(num)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{00030\ \textcolor{stringliteral}{\ \ \_\_\_\_}}
+\DoxyCodeLine{00031\ \textcolor{stringliteral}{\ |\_\_\_\ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{stringliteral}{\ \ \ \_\_)\ |}}
+\DoxyCodeLine{00033\ \textcolor{stringliteral}{\ \ |\_\_\ <}}
+\DoxyCodeLine{00034\ \textcolor{stringliteral}{\ \ \_\_\_)\ |}}
+\DoxyCodeLine{00035\ \textcolor{stringliteral}{\ |\_\_\_\_/}}
+\DoxyCodeLine{00036\ \textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{00037\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ }\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{00040\ \textcolor{stringliteral}{\ \ \_\_\_}}
+\DoxyCodeLine{00041\ \textcolor{stringliteral}{\ |\_\_\ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{stringliteral}{\ \ \ \ )\ |}}
+\DoxyCodeLine{00043\ \textcolor{stringliteral}{\ \ \ /\ /}}
+\DoxyCodeLine{00044\ \textcolor{stringliteral}{\ \ /\ /\_}}
+\DoxyCodeLine{00045\ \textcolor{stringliteral}{\ |\_\_\_\_|}}
+\DoxyCodeLine{00046\ \textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{00047\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ }\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{00050\ \textcolor{stringliteral}{\ \ \_\_}}
+\DoxyCodeLine{00051\ \textcolor{stringliteral}{\ /\_\ |}}
+\DoxyCodeLine{00052\ \textcolor{stringliteral}{\ \ |\ |}}
+\DoxyCodeLine{00053\ \textcolor{stringliteral}{\ \ |\ |}}
+\DoxyCodeLine{00054\ \textcolor{stringliteral}{\ \ |\ |}}
+\DoxyCodeLine{00055\ \textcolor{stringliteral}{\ \ |\_|}}
+\DoxyCodeLine{00056\ \textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{00057\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ }\textcolor{keywordflow}{break};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}()\ \{\ std::system(\textcolor{stringliteral}{"{}clear"{}});\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8h_a885dd526821aa0f602751ab73beee8c1}{hugeCountdown}}()\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::milliseconds(3000));}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{utils_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 3;\ i\ >=\ 1;\ i-\/-\/)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{utils_8h_a151ebab265ee8601c8fdf152490f88d1}{getHugeNumber}}(i)\ <<\ std::flush;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::milliseconds(1000));}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)r"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8h_ab47a0ed2bf3632096115488222cbb83b}{showTitle}}()\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{utils_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}();}
+\DoxyCodeLine{00088\ \ \ \ \ std::cout\ <<\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{00089\ \textcolor{stringliteral}{\ \ \_\_\ \ \_\_\ \_\_\_\_\_\ \_\ \ \ \ \ \ \_\_\_\_\_\ \_\_\_\_\ \ \_\ \ \ \_\ \_\_\_\_\_\_\ \_\_\_\_\_\ \ \ \_\_\_\_\_\_\_\_\ \ \ \ \ \_\_}}
+\DoxyCodeLine{00090\ \textcolor{stringliteral}{\ |\ \ \(\backslash\)/\ \ |\_\ \ \ \_|\ |\ \ \ \ |\_\ \ \ \_/\ \_\_\ \(\backslash\)|\ \(\backslash\)\ |\ |\ \ \_\_\_\_|\ \ \_\_\ \(\backslash\)\ |\_\_\_\ \ /\(\backslash\)\ \(\backslash\)\ \ \ /\ /}}
+\DoxyCodeLine{00091\ \textcolor{stringliteral}{\ |\ \(\backslash\)\ \ /\ |\ |\ |\ |\ |\ \ \ \ \ \ |\ ||\ |\ \ |\ |\ \ \(\backslash\)|\ |\ |\_\_\ \ |\ |\_\_)\ |\ \ \ /\ /\ \ \(\backslash\)\ \(\backslash\)\_/\ /}}
+\DoxyCodeLine{00092\ \textcolor{stringliteral}{\ |\ |\(\backslash\)/|\ |\ |\ |\ |\ |\ \ \ \ \ \ |\ ||\ |\ \ |\ |\ .\ \`{}\ |\ \ \_\_|\ |\ \ \_\ \ /\ \ \ /\ /\ \ \ \ \(\backslash\)\ \ \ /}}
+\DoxyCodeLine{00093\ \textcolor{stringliteral}{\ |\ |\ \ |\ |\_|\ |\_|\ |\_\_\_\_\ \_|\ ||\ |\_\_|\ |\ |\(\backslash\)\ \ |\ |\_\_\_\_|\ |\ \(\backslash\)\ \(\backslash\)\ \ /\ /\_\_\ \ \ \ |\ |}}
+\DoxyCodeLine{00094\ \textcolor{stringliteral}{\ |\_|\ \ |\_|\_\_\_\_\_|\_\_\_\_\_\_|\_\_\_\_\_\(\backslash\)\_\_\_\_/|\_|\ \(\backslash\)\_|\_\_\_\_\_\_|\_|\ \ \(\backslash\)\_\(\backslash\)/\_\_\_\_\_|\ \ \ |\_|}}
+\DoxyCodeLine{00095\ \textcolor{stringliteral}{)"{}\ <<\ std::endl\ <<\ std::endl;}}
+\DoxyCodeLine{00096\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{00097\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00102\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8h_a3d364a367d391a772a335a6624777d1c}{startGameHeader}}()\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{utils_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{clearScreen}}();}
+\DoxyCodeLine{00104\ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{formating_8h_ace790543ffe3663a896a5f074bd2a3ef}{GREEN}}\ <<\ R\textcolor{stringliteral}{"{}(}}
+\DoxyCodeLine{00105\ \textcolor{stringliteral}{\ \ \ \_\_\_\_\_\ \_\_\_\_\_\_\_\ \ \ \ \ \ \ \_\_\_\_\_\ \_\_\_\_\_\_\_\ \ \ \_\_\_\_\_\_}}
+\DoxyCodeLine{00106\ \textcolor{stringliteral}{\ \ /\ \_\_\_\_|\_\_\ \ \ \_\_|/\(\backslash\)\ \ \ |\ \ \_\_\ \(\backslash\)\_\_\ \ \ \_\_|\ |\_\_\_\ \ /\ \ \ /\(\backslash\)\ \ \ \ \_}}
+\DoxyCodeLine{00107\ \textcolor{stringliteral}{\ |\ (\_\_\_\ \ \ \ |\ |\ \ /\ \ \(\backslash\)\ \ |\ |\_\_)\ |\ |\ |\ \ \ \ \ \ \ /\ /\ \ \ /\ \ \(\backslash\)\ \ (\_)}}
+\DoxyCodeLine{00108\ \textcolor{stringliteral}{\ \ \(\backslash\)\_\_\_\ \(\backslash\)\ \ \ |\ |\ /\ /\(\backslash\)\ \(\backslash\)\ |\ \ \_\ \ /\ \ |\ |\ \ \ \ \ \ /\ /\ \ \ /\ /\(\backslash\)\ \(\backslash\)}}
+\DoxyCodeLine{00109\ \textcolor{stringliteral}{\ \ \_\_\_\_)\ |\ \ |\ |/\ \_\_\_\_\ \(\backslash\)|\ |\ \(\backslash\)\ \(\backslash\)\ \ |\ |\ \ \ \ \ /\ /\_\_\ /\ \_\_\_\_\ \(\backslash\)\ \_}}
+\DoxyCodeLine{00110\ \textcolor{stringliteral}{\ |\_\_\_\_\_/\ \ \ |\_/\_/\ \ \ \ \(\backslash\)\_\(\backslash\)\_|\ \ \(\backslash\)\_\(\backslash\)\ |\_|\ \ \ \ /\_\_\_\_\_/\_/\ \ \ \ \(\backslash\)\_(\_)}}
+\DoxyCodeLine{00111\ \textcolor{stringliteral}{)"{};}}
+\DoxyCodeLine{00112\ \textcolor{stringliteral}{\ \ \ \ \mbox{\hyperlink{utils_8h_a885dd526821aa0f602751ab73beee8c1}{hugeCountdown}}();}}
+\DoxyCodeLine{00113\ \textcolor{stringliteral}{\ \ \ \ std::cout\ <<\ \mbox{\hyperlink{formating_8h_a2f0a977841de68d04e86bc84c57c3ff3}{RESET}};}}
+\DoxyCodeLine{00114\ \textcolor{stringliteral}{\ \ \ \ \mbox{\hyperlink{utils_8h_ab47a0ed2bf3632096115488222cbb83b}{showTitle}}();}}
+\DoxyCodeLine{00115\ \textcolor{stringliteral}{\}}}
+\DoxyCodeLine{00116\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00123\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{utils_8h_af9deef4c01bb7a933c0d0eb7e63739b5}{gameEnd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ code,\ \textcolor{keyword}{const}\ std::string\ error\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{utils_8h_ab47a0ed2bf3632096115488222cbb83b}{showTitle}}();}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{if}(code\ ==\ 0)\ std::cout\ <<\ \textcolor{stringliteral}{"{}Do\ zobaczenia\ ponownie!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{else}\ std::cerr\ <<\ error\ <<\ std::endl;}
+\DoxyCodeLine{00127\ \ \ \ \ std::exit(code);}
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{utils_8h_a1a3115ce72ed8fca24f9e80b607f41bd}{isAlphanumeric}}(\textcolor{keyword}{const}\ std::string\ str)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{if}(str.empty())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{char}\ c\ :\ str)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!std::isalnum(c))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00141\ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00152\ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{utils_8h_a0b56e6d9fe913c758d340dcbd53b85b6}{getRandomC}}(\textcolor{keyword}{const}\ T\ min,\ \textcolor{keyword}{const}\ T\ max)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_integral<T>::value,\ \textcolor{stringliteral}{"{}Type\ must\ be\ int,\ long\ or\ int64\_t"{}});}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{static}\ std::random\_device\ rd;}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\_64\ gen(rd());}
+\DoxyCodeLine{00156\ \ \ \ \ std::uniform\_int\_distribution<T>\ distrib(min,\ max);}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ distrib(gen);}
+\DoxyCodeLine{00158\ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{utils_8h_a03fe2253da6873074bef415670082239}{toUpperCase}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ c)\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ difference\ =\ \textcolor{charliteral}{'a'}\ -\/\ \textcolor{charliteral}{'A'};}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{return}\ c\ -\/\ difference;}
+\DoxyCodeLine{00169\ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MIL\_UTILS\_H}}
+
+\end{DoxyCode}

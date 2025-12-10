@@ -1,0 +1,7 @@
+<map id="dbQuerys::insertLine" name="dbQuerys::insertLine">
+<area shape="rect" id="Node000001" title="Executes an INSERT query to add new rows to the database." alt="" coords="5,31,147,56"/>
+<area shape="rect" id="Node000002" href="$class_database.html#a0cf325405d417d8531d6c9605fd82a5e" title="Gets the single instance of the Database class." alt="" coords="195,5,348,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,32,182,29,176,31,147,37"/>
+<area shape="rect" id="Node000003" href="$class_database.html#aec56819c9272115190f77628c24ee943" title="Retrieves the active database session." alt="" coords="196,55,346,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,49,184,56,178,57,147,55"/>
+</map>

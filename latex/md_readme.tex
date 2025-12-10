@@ -1,0 +1,39 @@
+\chapter{Milioners game }
+\hypertarget{md_readme}{}\label{md_readme}\index{Milioners game@{Milioners game}}
+\label{md_readme_autotoc_md0}%
+\Hypertarget{md_readme_autotoc_md0}%
+\hypertarget{md_readme_autotoc_md1}{}\doxysection{\texorpdfstring{Project for first semester of Informatics on faculty of Automatic control, Robotics and Computer Science on Silesian University of Technology}{Project for first semester of Informatics on faculty of Automatic control, Robotics and Computer Science on Silesian University of Technology}}\label{md_readme_autotoc_md1}
+\hypertarget{md_readme_autotoc_md2}{}\doxysection{\texorpdfstring{Project made for learning purposes, not for commercial use.}{Project made for learning purposes, not for commercial use.}}\label{md_readme_autotoc_md2}
+\hypertarget{md_readme_autotoc_md3}{}\doxysection{\texorpdfstring{For contact regarding this game please use following e-\/mail address\+: \href{mailto:hannapotepa@icloud.com}{\texttt{hannapotepa@icloud.\+com}}}{For contact regarding this game please use following e-\/mail address\+: \href{mailto:hannapotepa@icloud.com}{\texttt{hannapotepa@icloud.\+com}}}}\label{md_readme_autotoc_md3}
+\hypertarget{md_readme_autotoc_md4}{}\doxysection{\texorpdfstring{To run app please use console}{To run app please use console}}\label{md_readme_autotoc_md4}
+\hypertarget{md_readme_autotoc_md5}{}\doxysection{\texorpdfstring{To compile this app please use cmake}{To compile this app please use cmake}}\label{md_readme_autotoc_md5}
+\hypertarget{md_readme_autotoc_md6}{}\doxysubsection{\texorpdfstring{Proper file\textquotesingle{}s tree of compiled game\+:}{Proper file\textquotesingle{}s tree of compiled game\+:}}\label{md_readme_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{├──\ databse/}
+\DoxyCodeLine{│\ \ \ ├──\ .env}
+\DoxyCodeLine{│\ \ \ ├──\ dbQuest.sql}
+\DoxyCodeLine{│\ \ \ └──\ dbSchem.sql}
+\DoxyCodeLine{└──\ mil\ (depending\ on\ operating\ system)}
+
+\end{DoxyCode}
+\hypertarget{md_readme_autotoc_md7}{}\doxysection{\texorpdfstring{Remember! This app use mysql xdevapi, you must enable this in your database}{Remember! This app use mysql xdevapi, you must enable this in your database}}\label{md_readme_autotoc_md7}
+\hypertarget{md_readme_autotoc_md8}{}\doxysubsection{\texorpdfstring{Content of the database/.env file}{Content of the database/.env file}}\label{md_readme_autotoc_md8}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{DB\_HOST=<your\_mysql\_host>}
+\DoxyCodeLine{DB\_PORT=<your\_mysql\_xdevapi\_port>}
+\DoxyCodeLine{DB\_USER=<your\_mysql\_user>}
+\DoxyCodeLine{DB\_PASS=<your\_mysql\_password>}
+\DoxyCodeLine{DB\_NAME=<your\_mysql\_database\_name>}
+
+\end{DoxyCode}
+\hypertarget{md_readme_autotoc_md9}{}\doxysection{\texorpdfstring{This app need active connection to database}{This app need active connection to database}}\label{md_readme_autotoc_md9}
+\hypertarget{md_readme_autotoc_md10}{}\doxysubsection{\texorpdfstring{It generates automatically schema, tables and inserts questions, u can change it in database/db\+Init.\+cpp file and database/\texorpdfstring{$\ast$}{*}.sql files}{It generates automatically schema, tables and inserts questions, u can change it in database/db\+Init.\+cpp file and database/\texorpdfstring{$\ast$}{*}.sql files}}\label{md_readme_autotoc_md10}
+\hypertarget{md_readme_autotoc_md11}{}\doxysubsection{\texorpdfstring{This app has one file that executes mysql querys, this file is database/db\+Querys.\+cpp}{This app has one file that executes mysql querys, this file is database/db\+Querys.\+cpp}}\label{md_readme_autotoc_md11}
+
+\begin{DoxyEnumerate}
+\item {\ttfamily \doxylink{classdb_querys_af3a5dac33cdcf206aac2d9e7c9197d50}{db\+Querys\+::sel\+Rows(mysqlx\+::string)}} method need query string as argument and return {\ttfamily std\+::optional\texorpdfstring{$<$}{<}mysqlx\+::\+Row\+Result\texorpdfstring{$>$}{>} value}
+\item {\ttfamily }\doxylink{classdb_querys_a7af4da56fbb97bc5c96c8a2706886724}{db\+Querys\+::insert\+Line(mysqlx\+::string)}{\ttfamily  method need query string as argument and return }int64\+\_\+t{\ttfamily  value as id of inserted line to database}
+\item {\ttfamily }\doxylink{classdb_querys_a29d4c131eddfc70fcbfd575ec6a11e0f}{db\+Querys\+::update\+Line(mysqlx\+::string)}{\ttfamily  method need query string as argument and return }bool\`{} value as success of updating rows 
+\end{DoxyEnumerate}
