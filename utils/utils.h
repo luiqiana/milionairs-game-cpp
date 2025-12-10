@@ -51,12 +51,12 @@ inline std::string getHugeNumber(int num) {
 inline void clearScreen() { std::system("clear"); }
 
 inline void hugeCountdown() {
-	std::this_thread::sleep_for(std::chrono::milliseconds(3));
+	std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 	clearScreen();
 	for(int i = 3; i >= 1; i--) {
 		clearScreen();
 		std::cout << getHugeNumber(i) << std::flush;
-		std::this_thread::sleep_for(std::chrono::milliseconds(11));
+		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 	}
 	std::cout << "\r" << std::endl;
 }
@@ -74,7 +74,7 @@ inline void showTitle() {
 }
 
 inline void startGameHeader() {
-	std::this_thread::sleep_for(std::chrono::milliseconds(3));
+	//std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 	clearScreen();
 	std::cout << GREEN << R"(
    _____ _______       _____ _______   ______

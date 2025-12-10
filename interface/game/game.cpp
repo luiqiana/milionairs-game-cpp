@@ -26,18 +26,6 @@ bool game::useResque(int64_t playerId, const std::string type) {
 	return dbQuerys::updateLine(query);
 }
 
-auto forceString = [](const mysqlx::Value &val) -> std::string {
-	try {
-		auto bytes = val.getRawBytes();
-		return std::string(reinterpret_cast<const char*>(bytes.first), bytes.second);
-	}
-	catch( ... ) {
-		std::stringstream ss;
-		ss << val;
-		return ss.str();
-	}
-};
-
 std::optional<std::array<std::string, 5>> game::getQuestion(const int level) {
 	mysqlx::string query = std::format("SELECT `quest`, `ans`, `bad1`, `bad2`, `bad3` FROM `questions` WHERE `level` = {};", level);
 	auto result = dbQuerys::selRows(query);
@@ -232,7 +220,7 @@ void game::gameInit(const int64_t playerId) {
 							std::cout << "Niestety nie mogliśmy zaktualizować twoich wygranych :(" << std::endl;
 						}
 					}
-					std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+					std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 					if(i == 11) {
 						showTitle();
 						mainMenu::showMenu(true);
