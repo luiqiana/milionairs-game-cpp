@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <random>
 
+// Function to generate huge numbers
 inline std::string getHugeNumber(int num) {
 	switch(num) {
 		case 3:
@@ -48,8 +49,10 @@ inline std::string getHugeNumber(int num) {
 	}
 }
 
+// Function to clear screen
 inline void clearScreen() { std::system("clear"); }
 
+// Function to start countdown
 inline void hugeCountdown() {
 	std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 	clearScreen();
@@ -61,6 +64,7 @@ inline void hugeCountdown() {
 	std::cout << "\r" << std::endl;
 }
 
+// Function to show big title
 inline void showTitle() {
 	clearScreen();
 	std::cout << R"(
@@ -73,8 +77,8 @@ inline void showTitle() {
 )" << std::endl << std::endl;
 }
 
+// Function to show huge "START ZA:" text
 inline void startGameHeader() {
-	//std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 	clearScreen();
 	std::cout << GREEN << R"(
    _____ _______       _____ _______   ______
@@ -89,6 +93,7 @@ inline void startGameHeader() {
 	showTitle();
 }
 
+// Function that ends game, it shows error too (only when needed)
 inline void gameEnd(const int code, const std::string error = "") {
 	showTitle();
 	if(code == 0) std::cout << "Do zobaczenia ponownie!" << std::endl;
@@ -96,6 +101,7 @@ inline void gameEnd(const int code, const std::string error = "") {
 	std::exit(code);
 }
 
+// Function that checks is std::string alphanumeric
 inline bool isAlphanumeric(const std::string str) {
 	if(str.empty()) return false;
 	for(char c : str) {
@@ -104,6 +110,7 @@ inline bool isAlphanumeric(const std::string str) {
 	return true;
 }
 
+// Function that generates random value from min to max
 template<typename T>
 inline T getRandomC(const T min, const T max) {
 	static_assert(std::is_integral<T>::value, "Type must be int, long or int64_t");
@@ -113,6 +120,7 @@ inline T getRandomC(const T min, const T max) {
 	return distrib(gen);
 }
 
+// Function that makes char UpperCase
 inline char toUpperCase(const char c) {
 	const int difference = 'a' - 'A';
 	return c - difference;

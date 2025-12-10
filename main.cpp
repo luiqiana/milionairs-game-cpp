@@ -7,9 +7,11 @@ using namespace std;
 
 int main() {
 	try {
+		// Generate database instance
 		Database::getInstance();
 		cout << "Starting game..." << endl;
 		startGameHeader();
+		// Show main menu
 		mainMenu::showMenu(false);
 
 	}

@@ -28,7 +28,7 @@ DB_NAME=<your_mysql_database_name>
 ```
 
 ## This app need active connection to database
-### It generates automatically schema with tables and inserts questions, u can change it in database/dbInit.cpp file and database/*.sql files
+### It generates automatically schema, tables and inserts questions, u can change it in database/dbInit.cpp file and database/*.sql files
 
 ### This app has one file that executes mysql querys, this file is database/dbQuerys.cpp
 1. `dbQuerys::selRows(mysqlx::string)` method need query string as argument and return `std::optional<mysqlx::RowResult> value

@@ -8,6 +8,7 @@
 #include "envLoader.h"
 #include "dbInit.h"
 
+// Constructor that load .env file and creates database session
 Database::Database() {
 	loadEnv();
 
@@ -41,6 +42,7 @@ Database::Database() {
 	}
 }
 
+// Destructor that closes database session
 Database::~Database() {
 	if(session) {
 		session -> close();
@@ -48,6 +50,7 @@ Database::~Database() {
 	}
 }
 
+// Method that returning mysqlx::Session
 mysqlx::Session &Database::getSession() {
 	if(!session) throw std::runtime_error("[DB] Session not found!");
 	return *session;

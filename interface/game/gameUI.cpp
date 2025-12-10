@@ -9,16 +9,19 @@
 #include "./../../utils/formating.h"
 #include <array>
 
+// Method that move cursor to specific X and Y coordinates
 void gameUI::gotoXY(const int x, const int y) {
 	std::cout << "\033[" << y << ";" << x << "H";
 }
 
+// Method that returns background colors as std::string, it needs std::string value as color which we need
 std::string gameUI::bgColor(const std::string color) {
 	if(color == "orange") return "\033[48;5;208m";
 	if(color == "green") return "\033[42m";
 	return "";
 }
 
+// Method that generates money tree
 void gameUI::drawMoneyTree(const int currentLevel) {
 	const std::string prizes[] = {"  1 000 zł", "  2 000 zł", "  5 000 zł", " 10 000 zł", " 15 000 zł", " 25 000 zł", " 50 000 zł", " 75 000 zł", "125 000 zł", "250 000 zł", "500 000 zł", " 1 MILION"};
 	const bool guaranteed[] = {false, true, false, false, false, false, true, false, false, false, false, true};
@@ -37,6 +40,7 @@ void gameUI::drawMoneyTree(const int currentLevel) {
 	}
 }
 
+// Method that generates questions
 void gameUI::drawQuestion(std::string &question, std::string &a, std::string &b, std::string &c, std::string &d) {
 	const int startX = 4;
 	const int startY = 5;
@@ -56,6 +60,7 @@ void gameUI::drawQuestion(std::string &question, std::string &a, std::string &b,
 	std::cout << GOLD << "D: " << RESET << d;
 }
 
+// Method that generates resques
 void gameUI::drawResque(bool has5050, bool hasPhone, bool hasPublicity) {
 	const int startX = 2;
 	const int startY = 2;
@@ -71,6 +76,7 @@ void gameUI::drawResque(bool has5050, bool hasPhone, bool hasPublicity) {
 	std::cout << (hasPublicity ? GOLD: RED) << "[  " << (hasPublicity ? "PUB" : "   ")  << "  ]" << RESET;
 }
 
+// Method that generates combined resques, questions and money tree
 void gameUI::drawCombined(const int level, std::array<std::string, 5> &question, std::array<bool, 3> resque) {
 	clearScreen();
 

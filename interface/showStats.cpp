@@ -13,6 +13,7 @@
 #include <chrono>
 #include <iomanip>
 
+// Method which get player username input to display stats for this player
 void showStats::showPlayerStats() {
 	showTitle();
 	std::cout << "  ---==================---" << std::endl;
@@ -26,6 +27,7 @@ void showStats::showPlayerStats() {
 	showPlayer(inpPlayer);
 }
 
+// Function that show player stats, it needs std::string as an argument, the string value must contains player's username
 void showStats::showPlayer(const std::string player) {
 	showTitle();
 	if(!isAlphanumeric(player)) {

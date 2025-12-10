@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 
+// Function that show app credentials
 inline void showCredentials() {
 	showTitle();
 	std::cout << R"(

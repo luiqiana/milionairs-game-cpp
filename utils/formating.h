@@ -7,9 +7,12 @@
 
 #include <string>
 
+
+// ANSI codes to RESET and make text BOLDED
 inline const std::string RESET = "\033[0m";
 inline const std::string BOLD = "\033[1m";
 
+// ANSI codes to make text colored
 inline const std::string RED = "\033[31m";
 inline const std::string GREEN = "\033[32m";
 inline const std::string CYAN = "\033[36m";

@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <cstdint>
 
+// Method that show choice input and generates error when input is incorrect
 void showTop::showYourChoice(int wrong) {
 	// \033[*A = Cursor * lines up
 	// \033[2K = Clear line
@@ -30,6 +31,7 @@ void showTop::showYourChoice(int wrong) {
 	std::cout << "Twój wybór: ";
 }
 
+// Method that return std::string of choosed value of top players type
 std::string showTop::makeChoice() {
 	std::cout << "  ---==================---" << std::endl;
 	showYourChoice(0);
@@ -74,6 +76,7 @@ std::string showTop::makeChoice() {
 	}
 }
 
+// Method that generates show top player menu and get from user how many players must show
 void showTop::showTopPlayers() {
 	showTitle();
 	std::cout << R"(
@@ -100,13 +103,6 @@ void showTop::showTopPlayers() {
 	std::string inpLine;
 	std::cin.ignore();
 	std::getline(std::cin, inpLine);
-	/*std::stringstream ss(inpLine);
-	if(inpLine.empty() || !(ss >> howMany)) {
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		incorrect = true;
-		howMany = defaulthowMany;
-	}*/
 	if(inpLine.empty()) {
 		howMany = defaulthowMany;
 		incorrect = false;
@@ -127,6 +123,7 @@ void showTop::showTopPlayers() {
 	displayStats(howMany, choice, incorrect);
 }
 
+// Method that display statistics, it needs int64_t value as how many records to show, std::string value as top stats type and bool value as incorrect number of records
 void showTop::displayStats(const int64_t howMany, const std::string choice, const bool incorrect) {
 	showTitle();
 	if(incorrect) std::cout << "Nieprawidłowe wejście, wyświetlam wartość domyślną" << std::endl;

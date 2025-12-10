@@ -11,6 +11,7 @@
 #include "./game.h"
 #include <cstdlib>
 
+// Method to start game when playerId exists
 void startGame::start() {
 	showTitle();
 	int64_t playerId = getPlayerId(getPlayerName());
@@ -23,11 +24,9 @@ void startGame::start() {
 	}
 
 	game::gameInit(playerId);
-	return;
-
-	//std::cout << playerId << std::endl;
 }
 
+// Method to get player username from std::cin
 std::string startGame::getPlayerName() {
 	int wrong = 0;
 	while(true) {
@@ -43,6 +42,7 @@ std::string startGame::getPlayerName() {
 	}
 }
 
+// Method to get player id, it needs std::string player username, returns int64_t value as player's id from  database, it creates new player when username doesn't exists
 int64_t startGame::getPlayerId(const std::string playerName) {
 	mysqlx::string query = std::format("SELECT `id` FROM `players` WHERE `username` = '{}';", playerName);
 	auto result = dbQuerys::selRows(query);
@@ -61,6 +61,7 @@ int64_t startGame::getPlayerId(const std::string playerName) {
 	return (rowCount == 0 ? createPlayer(playerName) : -1);
 }
 
+// Method to create new player, it needs std::string as player username, returns int64_t value as new player's id from database
 int64_t startGame::createPlayer(const std::string playerName) {
 	mysqlx::string query = std::format("INSERT INTO `players` (`username`, `wins`, `played_games`, `5050`, `phone`, `publicity`, `money`) VALUES ('{}', 0, 1, 0, 0, 0, 0);", playerName);
 	return dbQuerys::insertLine(query);

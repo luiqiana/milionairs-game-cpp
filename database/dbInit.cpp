@@ -7,6 +7,7 @@
 #include <fstream>
 #include <cstdlib>
 
+// Void method that initializing database, It needs mysqlx::Session and database name as a std::string value
 void dbInit::init(mysqlx::Session &session, const std::string &dbName) {
 	try {
 		std::cout << "[DB Initializer] Initializing database..." << std::endl;
@@ -23,6 +24,7 @@ void dbInit::init(mysqlx::Session &session, const std::string &dbName) {
 	if(recordsEmpty(session, "SELECT COUNT(*) FROM `questions`")) executeScriptFromFile(session, "./database/dbQuest.sql");
 }
 
+// Void method that execute SQL script from .sql file, it needs mysqlx::Session and file name as a std::string value
 void dbInit::executeScriptFromFile(mysqlx::Session &session, const std::string &fileName) {
 	std::ifstream file(fileName);
 
@@ -56,6 +58,9 @@ void dbInit::executeScriptFromFile(mysqlx::Session &session, const std::string &
 	std::cout << "[DB Initializer] Database initialized with " << fileName << "!" << std::endl;
 }
 
+
+// Method that checks table is empty, it needs mysqlx::Session and mysqlx::string as query value. Returning bool value
+// Returns false when table is containing something and if it is error with database, true when it's empty
 bool dbInit::recordsEmpty(mysqlx::Session &session, const mysqlx::string& query) {
 	if(query.empty()) {
 		std::cerr << "[DB Initializer] Query empty, returning false value" << std::endl;

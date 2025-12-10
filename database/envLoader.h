@@ -10,11 +10,13 @@
 #include <string>
 #include <cstdlib>
 
+// Method to get values from C env
 inline std::string getEnvVar(const char *key) {
 	const char *val = std::getenv(key);
 	return val ? val : "";
 }
 
+// Method that removes white chars from first and last places
 inline std::string trim(const std::string &str) {
 	// first char index of char that isn't space, tab or new line
 	size_t first = str.find_first_not_of(" \t\n\r");
@@ -25,6 +27,7 @@ inline std::string trim(const std::string &str) {
 	return str.substr(first ,(last - first + 1));
 }
 
+// Method to load values from .env file
 inline void loadEnv() {
 	std::ifstream file("./database/.env");
 

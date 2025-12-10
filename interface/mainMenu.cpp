@@ -11,6 +11,7 @@
 #include "./showStats.h"
 #include "./game/startGame.h"
 
+// Method that show choice input and generates error when input is incorrect
 void mainMenu::showYourChoice(const int wrong) {
 	// \033[*A = Cursor * lines up
 	// \033[2K = Clear line
@@ -27,6 +28,7 @@ void mainMenu::showYourChoice(const int wrong) {
 	std::cout << "Twój wybór: ";
 }
 
+// Method to choose one of the options from main menu
 void mainMenu::makeChoice() {
 	std::cout << "  ---==================---" << std::endl;
 	showYourChoice(0);
@@ -69,6 +71,7 @@ void mainMenu::makeChoice() {
 	}
 }
 
+// Method that shows main menu, it needs bool value as playing again, when playing again true, when not - false
 void mainMenu::showMenu(bool again) {
 	if(!again) {
 		std::cout << R"(

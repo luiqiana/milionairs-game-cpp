@@ -8,6 +8,8 @@
 #include <optional> // requires C++ 17
 #include <mysqlx/xdevapi.h>
 
+// Method to select rows from database, it needs query as mysqlx::string. Returning std::optional<mysqlx::RowResult> value
+// Returns std::nullopt when error with database or returns mysqlx::RowResult when everything is fine
 std::optional<mysqlx::RowResult> dbQuerys::selRows(mysqlx::string queryString) {
 	mysqlx::Session &session = Database::getInstance().getSession();
 	try {
@@ -20,6 +22,8 @@ std::optional<mysqlx::RowResult> dbQuerys::selRows(mysqlx::string queryString) {
 	}
 }
 
+// Method to insert rows to database, it needs query as mysqlx::string. Returning int64_t
+// Returns -1 when error with database or returns inserted line id when everything is fine
 int64_t dbQuerys::insertLine(mysqlx::string queryString) {
 	mysqlx::Session &session = Database::getInstance().getSession();
 	try {
@@ -35,6 +39,8 @@ int64_t dbQuerys::insertLine(mysqlx::string queryString) {
 	}
 }
 
+// Method to update rows in database, it needs query as mysqlx::string. Returning bool value
+// Returns false when error with database or returns true when everything is fine
 bool dbQuerys::updateLine(mysqlx::string queryString) {
 	mysqlx::Session &session = Database::getInstance().getSession();
 	try {
