@@ -34,3 +34,5 @@ DB_NAME=<your_mysql_database_name>
 1. `dbQuerys::selRows(mysqlx::string)` method need query string as argument and return `std::optional<mysqlx::RowResult> value
 2. `dbQuerys::insertLine(mysqlx::string)` method need query string as argument and return `int64_t` value as id of inserted line to database
 3. `dbQuerys::updateLine(mysqlx::string)` method need query string as argument and return `bool` value as success of updating rows
+
+## Docs are in the directory `./html/index.html`
